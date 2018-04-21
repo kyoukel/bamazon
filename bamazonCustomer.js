@@ -31,7 +31,7 @@ const questions = {
         },
         {
             type: "prompt",
-            name: "stock_quanitity",
+            name: "stock_quantity",
             message: "Please enter how many of these you would like to buy.",
             validate: (choice) => {
                 if(Number.isInteger(parseInt(choice))) return true;
@@ -46,7 +46,32 @@ const availableProducts = () => {
     return query(statement)
 }
 
+const processOrder = (order)=>{
+    const statement = `select * from products where item_id = ${order.item_id} and stock_quantity >= ${order.stock_quantity}`;
+    return query(statement)
+        .then(items=>{
+            if(items.length === 0) return 'Insufficient quantity.'
+            return updateDB(order)
+        })
+}
+
+const updateDB = (order) => {
+    const statement = `select * from products where item_id = ${order.item_id}`;
+    return query(statement)
+        .then(items=> {
+            const newStock = items[0].stock_quantity - order.stock_quantity
+            const statement = `update products set stock_quantity = ${newStock} where item_id = ${order.item_id}`;
+            return query(statement)
+                .then(()=>{
+                    const price = (order.stock_quantity * items[0].price).toFixed(2)
+                    return `your total is $${price}`
+                })
+        })
+}
+
 availableProducts()
-    .then(data => console.table(data))
+    .then(products => console.table(products))
     .then(() => inquirer.prompt(questions.order))
+    .then(order => processOrder(order))
+    .then(orderResult => console.log(orderResult))
     .then(() => conn.end())
