@@ -19,23 +19,23 @@ mysql | This is a node.js driver for mysql. It is written in JavaScript, does no
 
 1. To see bamazon's full product inventory, you will need to type `mysql -u root` or `mysql -u root -p` to access mysql in GitBash/Terminal.
     
-    Next, type the following commands in this order:
+    >Next, type the following commands in this order:
     * 1. show databases;
     * 2. use bamazon_db;
     * 3. show tables;
     * 4. select * from products;
     
-    [Products Inventory](https://github.com/kyoukel/bamazon/blob/master/screenshots/full_products_inventory.PNG)
+    ![Products Inventory](https://github.com/kyoukel/bamazon/blob/master/screenshots/full_products_inventory.PNG)
 
 2. To run this application, type this in your GitBash/Terminal `node bamazonCustomer.js` and press `enter`.
     
-    * Once an item's stock has been **_depleted_**, it will be _(~~removed~~)_ from the customer's view. You should see the products table displayed with available items like you see below:
+    >* Once an item's stock has been **_depleted_**, it will be _(~~removed~~)_ from the customer's view. You should see the products table displayed with available items like you see below:
     
     >![Available Inventory](https://github.com/kyoukel/bamazon/blob/master/screenshots/available_items.PNG)
 
     * Notice that (~~item_id 7~~) had a quantity of 0 and has been `removed from the customer's view` because this item is no longer available.
 
-2. Customer will be _prompted_ with two questions to make an item selection then enter the quantity they would like to buy. 
+2. Customer will be _**prompted**_ with two questions to make an item selection then enter the quantity they would like to buy. 
     
     >If customer makes an `invalid entry`, they will be prompted to make a valid selection:
 
@@ -43,7 +43,7 @@ mysql | This is a node.js driver for mysql. It is written in JavaScript, does no
 
 3. When customer makes a valid selection, their `order total` will be displayed and bamazon inventory will be updated and reflect new available stock.
     
-[Order Total](https://github.com/kyoukel/bamazon/blob/master/screenshots/order_total.PNG)
+![Order Total](https://github.com/kyoukel/bamazon/blob/master/screenshots/order_total.PNG)
 
 >![Inventory Updated](https://github.com/kyoukel/bamazon/blob/master/screenshots/inventory_updated.PNG)
 
