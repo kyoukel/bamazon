@@ -2,32 +2,36 @@
 This is a CLI application that takes in orders from customers and depletes stock from the store's inventory.
 
 ## Basic App Functionality
-- [x] The app will prompt users with two messages.
-- [x] The first will prompt users to enter the `item_id` of the product they would like to buy.
+- [x] The app will prompt users/customers with two messages.
+- [x] The first message will prompt customers to enter the `item_id` of the product they would like to buy.
 - [x] The second message will ask how many units of the product they would like to buy.
-- [x] Once the customer has placed the order, the application will check if bamazon store has enough of the product in stock to meet the customer's request.
-- [x] If not, the app should log a phrase like `insufficient quantity!`, and then prevent the order from going through.
+- [x] Once the customer has placed their order, the application will check if bamazon store has enough of the product in stock to meet the customer's request.
+- [x] If not, the app will log a phrase like `**insufficient quantity!**`, and then prevent their order from going through.
 
 ## App Requirements
-NPM Pkgs Installed | Uses
------------------- | ----
+NPM Pkgs Installed | Package Uses
+------------------ | ------------
 console.table | Adds console.table method for convenience
 inquirer | A collection of common interactive command line user interfaces
 mysql | This is a node.js driver for mysql. It is written in JavaScript, does not require compiling, and is 100% MIT licensed
 
 ## **Running bamazon Application**
 
-1. Running this application will first display the **customer's view** of _all items available_ for sale:
-    **Before running this application:** double-check that you are in the `correct GitHub branch & file path` before running node in your terminal.
-
-    >To run this application, type this in your GitBash terminal `node bamazonCustomer.js` and press `enter`. 
-    >Then follow the message prompts.
+1. To see bamazon's full product inventory, you will need to type `mysql -u root` to access mysql in GitBash/Terminal. 
+    
+    Next, type the following commands in this order:
+    > 1. show databases;
+    > 2. use bamazon_db;
+    > 3. show tables;
+    > 4. select * from products;
     
     >![Products Inventory](https://github.com/kyoukel/bamazon/blob/master/screenshots/full_products_inventory.PNG)
 
-* Notice that `~~item_id 7~~` had a `quantity of 0` and has been removed from the customer's view because this item is no longer available. 
+2. To run this application, type this in your GitBash/Terminal `node bamazonCustomer.js` and press `enter`.
     
-    >Once an item's stock has been `depleted`, it will be `removed` from customer's view.
+    * Once an item's stock has been `depleted`, it will be `removed` from the customer's view. You should see the products table displayed with available items like this:
+
+    * Notice that (~~item_id 7~~) had a `quantity of 0` and has been removed from the `customer's view` because this item is no longer available.
     
     >![Available Inventory](https://github.com/kyoukel/bamazon/blob/master/screenshots/available_items.PNG)
 
@@ -37,7 +41,7 @@ mysql | This is a node.js driver for mysql. It is written in JavaScript, does no
 
     >![Insufficient Quantity](https://github.com/kyoukel/bamazon/blob/master/screenshots/insufficient_quantity.PNG)
 
-3. When customer makes a valid selection, their `order total` will be displayed and item inventory will be updated and reflect new available stock.
+3. When customer makes a valid selection, their `order total` will be displayed and bamazon inventory will be updated and reflect new available stock.
     
     >![Order Total](https://github.com/kyoukel/bamazon/blob/master/screenshots/order_total.PNG)
 
