@@ -20,7 +20,7 @@ console.table | Adds console.table method for convenience
 1. Running this application will first display the **customer's view** of _all items available_ for sale:
     >To run this application, type this in your Git Bash terminal `node bamazonCustomer.js` and press `enter`. Then follow the message prompts.
     >Troubleshooting: check that you are in the correct GitHub branch file path before running node in your terminal `youname ~/Desktop/Code/bamazon (master)`.
-    ![Products Inventory](https://github.com/kyoukel/bamazon/screenshots/full_products_inventory.png)
+    ![Products Inventory](https://kyoukel.github.com/bamazon/screenshots/full_products_inventory.png)
 
 * Notice that `~~item_id 7~~` had a `quantity of 0` and has been removed from the customer's view because this item is no longer available. 
     >Once an item's stock has been `depleted`, it will be `removed` from customer's view.
