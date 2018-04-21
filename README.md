@@ -23,25 +23,25 @@ mysql | This is a node.js driver for mysql. It is written in JavaScript, does no
     >To run this application, type this in your GitBash terminal `node bamazonCustomer.js` and press `enter`. 
     >Then follow the message prompts.
     
-    >![Products Inventory](https://github.com/kyoukel/bamazon/screenshots/full_products_inventory.png)
+    >![Products Inventory](https://github.com/kyoukel/bamazon/blob/master/screenshots/full_products_inventory.PNG)
 
 * Notice that `~~item_id 7~~` had a `quantity of 0` and has been removed from the customer's view because this item is no longer available. 
     
     >Once an item's stock has been `depleted`, it will be `removed` from customer's view.
     
-    >![Available Inventory](https://github.com/kyoukel/bamazon/screenshots/available_items.png)
+    >![Available Inventory](https://github.com/kyoukel/bamazon/blob/master/screenshots/available_items.PNG)
 
 2. Customer will be `prompted` with two questions to make an item selection then enter the quantity they would like to buy. 
     
     >If customer makes an `invalid entry`, they will be prompted to make a valid selection:
 
-    >![Insufficient Quantity](https://github.com/kyoukel/bamazon/screenshots/insufficient_quantity.png)
+    >![Insufficient Quantity](https://github.com/kyoukel/bamazon/blob/master/screenshots/insufficient_quantity.PNG)
 
 3. When customer makes a valid selection, their `order total` will be displayed and item inventory will be updated and reflect new available stock.
     
-    >![Order Total](https://github.com/kyoukel/bamazon/screenshots/order_total.png)
+    >![Order Total](https://github.com/kyoukel/bamazon/blob/master/screenshots/order_total.PNG)
 
-    >![Inventory Updated](./screenshots/inventory_updated.png)
+    >![Inventory Updated](https://github.com/kyoukel/bamazon/blob/master/screenshots/inventory_updated.PNG)
 
 
 
