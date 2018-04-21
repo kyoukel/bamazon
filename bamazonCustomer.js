@@ -25,24 +25,24 @@ const questions = {
                     .then(data=>data.map(element=>element.item_id))
                     .then(data=> {
                         if(data.includes(parseInt(choice))) return true;
-                        return "invalid choice"
+                        return "Please make a valid selection."
                 })
             }
         },
         {
             type: "prompt",
             name: "stock_quantity",
-            message: "Please enter how many of these you would like to buy.",
+            message: "Please enter how many you would like to buy.",
             validate: (choice) => {
                 if(Number.isInteger(parseInt(choice))) return true;
-                return "invalid choice"
+                return "Please make a valid selection."
             }
         },
     ]
 }
 
 const availableProducts = () => {
-    const statement = 'select * from products where stock_quantity >0';
+    const statement = 'select * from products where stock_quantity > 0';
     return query(statement)
 }
 
@@ -50,7 +50,7 @@ const processOrder = (order)=>{
     const statement = `select * from products where item_id = ${order.item_id} and stock_quantity >= ${order.stock_quantity}`;
     return query(statement)
         .then(items=>{
-            if(items.length === 0) return 'Insufficient quantity.'
+            if(items.length === 0) return 'Insufficient quantity! Please enter a valid quantity.'
             return updateDB(order)
         })
 }
@@ -64,7 +64,7 @@ const updateDB = (order) => {
             return query(statement)
                 .then(()=>{
                     const price = (order.stock_quantity * items[0].price).toFixed(2)
-                    return `your total is $${price}`
+                    return `Your order total is $${price}`
                 })
         })
 }
