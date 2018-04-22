@@ -9,7 +9,7 @@ This is a CLI application that takes in orders from customers and depletes stock
 - [x] If not, the app will log a phrase like `insufficient quantity!`, and then prevent their order from going through.
 
 ## App Requirements
-> NPM Pkgs Installed | Package Uses
+NPM Pkgs Installed | Package Uses
 -------------------- | ------------
 console.table | Adds console.table method for convenience
 inquirer | A collection of common interactive command line user interfaces
@@ -27,7 +27,7 @@ mysql | This is a node.js driver for mysql. It is written in JavaScript, does no
     
     > ![Products Inventory](https://github.com/kyoukel/bamazon/blob/master/screenshots/full_products_inventory.PNG)
 
-    Type `exit` to exit mysql.
+    Type `exit` and press `enter` to exit mysql.
 
 2. To run this application, type this in your GitBash/Terminal `node bamazonCustomer.js` and press `enter`.
     
@@ -37,7 +37,7 @@ mysql | This is a node.js driver for mysql. It is written in JavaScript, does no
 
     * Notice that (~~item_id 7~~) had a `quantity of zero` and has been (~~removed from the customer's view~~) because this item is no longer available.
 
-3. Customer will be _**prompted**_ with two questions to make an item selection then enter the quantity they would like to buy. 
+3. Customer will be _**prompted**_ with two questions to make an item selection then `enter` the quantity they would like to buy. 
     
     > If customer makes an `invalid entry`, they will be prompted to make a valid selection:
 
@@ -53,7 +53,7 @@ mysql | This is a node.js driver for mysql. It is written in JavaScript, does no
 
 6. Customers can now place another order until all inventory has been depleted.
 
-# THANK YOU FOR SHOPPING WITH BAMAZON!!
+## THANK YOU FOR SHOPPING WITH BAMAZON!!
 
 
 
