@@ -1,7 +1,7 @@
 # bAmazon | Amazon-like storefront: 
 This is a CLI application that takes in orders from customers and depletes stock from the store's inventory.
 
-## Basic App Functionality
+## Basic app Functionality
 - [x] The app will prompt users/customers with two messages.
 - [x] The first message will prompt customers to enter the `item_id` of the product they would like to buy.
 - [x] The second message will ask how many units of the product they would like to buy.
